@@ -1,4 +1,4 @@
-Set-ExecutionPolicy Bypass -Scope CurrentUser
+Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
 powershell "iwr -useb get.scoop.sh | iex"
 scoop install ffmpeg
 [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms")

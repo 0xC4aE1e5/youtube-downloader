@@ -29,12 +29,12 @@ Loop
 wscript $env:TEMP\downloading.vbs
 if ($ext -eq "m4a") {
     cmd /c "$ytdl -f `"m4a`" -o video $link"
-    cmd /c "move video $name"
+    cmd /c "move video `"$name`""
 } elseif ($ext -eq "mp4") {
     cmd /c "$ytdl -o video $link"
     cmd /c 'move video.* video'
     ffmpeg -i video -vcodec copy -c:a copy "video.mp4"
-    cmd /c "move video.mp4 $name"
+    cmd /c "move video.mp4 `"$name`""
 }
 $olderror = $ErrorActionPreference
 $ErrorActionPreference = 'silentlycontinue'
